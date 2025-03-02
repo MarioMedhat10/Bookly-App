@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -13,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
       minimum: const EdgeInsets.only(top: 32),
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 30,
+          horizontal: kHorizontalPadding,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
