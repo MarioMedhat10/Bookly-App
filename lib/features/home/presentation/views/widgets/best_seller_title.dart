@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +9,8 @@ class BestSellerTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SliverPadding(
       padding: EdgeInsets.only(
-        left: 30,
-        right: 30,
+        left: kHorizontalPadding,
+        right: kHorizontalPadding,
         top: 20,
       ),
       sliver: SliverToBoxAdapter(
