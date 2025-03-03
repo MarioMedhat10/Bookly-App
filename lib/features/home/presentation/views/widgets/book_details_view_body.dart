@@ -1,6 +1,6 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/featured_list_view_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -22,7 +22,7 @@ class BookDetailsViewBody extends StatelessWidget {
               left: width * 0.18,
               top: 30
             ),
-            child: const FeaturedListViewItem(),
+            child: const CustomBookImage(),
           ),
         ],
       ),
