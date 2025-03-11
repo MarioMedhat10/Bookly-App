@@ -3,34 +3,34 @@ import 'package:dio/dio.dart';
 abstract class Failure {
   final String errMessage;
 
-  Failure(this.errMessage);
+  const Failure(this.errMessage);
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(super.errMessage);
+  const ServerFailure(super.errMessage);
 
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection Timeout with ApiServer');
+        return const ServerFailure('Connection Timeout with ApiServer');
       case DioExceptionType.sendTimeout:
-        return ServerFailure('Send Timeout with ApiServer');
+        return const ServerFailure('Send Timeout with ApiServer');
       case DioExceptionType.receiveTimeout:
-        return ServerFailure('Receive Timeout with ApiServer');
+        return const ServerFailure('Receive Timeout with ApiServer');
       case DioExceptionType.badCertificate:
-        return ServerFailure('Bad Certificate Error');
+        return const ServerFailure('Bad Certificate Error');
       case DioExceptionType.badResponse:
         return ServerFailure.fromBadResponse(
           dioException.response!.statusCode!,
           dioException.response!.data,
         );
       case DioExceptionType.cancel:
-        return ServerFailure('Request to ApiServer was canceled');
+        return const ServerFailure('Request to ApiServer was canceled');
       case DioExceptionType.connectionError:
-        return ServerFailure(
+        return const ServerFailure(
             'No Internet Connection, Check your connection and try again');
       case DioExceptionType.unknown:
-        return ServerFailure('Unexpected Error, Please try again!');
+        return const ServerFailure('Unexpected Error, Please try again!');
     }
   }
 
@@ -38,11 +38,11 @@ class ServerFailure extends Failure {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(response["error"]["message"]);
     } else if (statusCode == 404) {
-      return ServerFailure('Your request not found, Please try later!');
+      return const ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {
-      return ServerFailure('Internal Server Error, Please try later!');
+      return const ServerFailure('Internal Server Error, Please try later!');
     } else {
-      return ServerFailure('Oops There was an error, Please try later!');
+      return const ServerFailure('Oops There was an error, Please try later!');
     }
   }
 }
