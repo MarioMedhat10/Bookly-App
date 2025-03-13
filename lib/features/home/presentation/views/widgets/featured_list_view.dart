@@ -21,18 +21,25 @@ class FeaturedListView extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .29,
               child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
                 separatorBuilder: (context, index) => const SizedBox(
                   width: 15,
                 ),
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
+                itemCount: state.books.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.only(
                       left: index == 0 ? kHorizontalPadding : 0,
-                      right: index == 9 ? kHorizontalPadding : 0,
+                      right: index == state.books.length - 1
+                          ? kHorizontalPadding
+                          : 0,
                     ),
-                    child: const CustomBookImage(),
+                    child: CustomBookImage(
+                      imageUrl: state
+                              .books[index].volumeInfo!.imageLinks!.thumbnail ??
+                          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+                    ),
                   );
                 },
               ),
