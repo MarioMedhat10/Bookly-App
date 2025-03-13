@@ -38,7 +38,7 @@ class FeaturedListView extends StatelessWidget {
                     child: CustomBookImage(
                       imageUrl: state
                               .books[index].volumeInfo!.imageLinks!.thumbnail ??
-                          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+                          noImageUrl,
                     ),
                   );
                 },
