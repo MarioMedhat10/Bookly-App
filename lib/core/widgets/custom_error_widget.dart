@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +9,13 @@ class CustomErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 20,
+        horizontal: kHorizontalPadding,
+      ),
       child: Text(
+        textAlign: TextAlign.center,
         errMessage,
         style: Styles.textStyle18,
       ),
