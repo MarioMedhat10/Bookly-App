@@ -16,17 +16,17 @@ class AccessInfo extends Equatable {
   final bool? quoteSharingAllowed;
 
   const AccessInfo({
-    this.country,
-    this.viewability,
-    this.embeddable,
-    this.publicDomain,
-    this.textToSpeechPermission,
-    this.epub,
-    this.pdf,
-    this.webReaderLink,
-    this.accessViewStatus,
-    this.quoteSharingAllowed,
-  });
+		this.country,
+		this.viewability,
+		this.embeddable,
+		this.publicDomain,
+		this.textToSpeechPermission,
+		this.epub,
+		this.pdf,
+		this.webReaderLink,
+		this.accessViewStatus,
+		this.quoteSharingAllowed,
+	});
 
   factory AccessInfo.fromJson(Map<String, dynamic> json) => AccessInfo(
         country: json['country'] as String?,
@@ -45,18 +45,19 @@ class AccessInfo extends Equatable {
         quoteSharingAllowed: json['quoteSharingAllowed'] as bool?,
       );
 
-  Map<String, dynamic> toJson() => {
-        'country': country,
-        'viewability': viewability,
-        'embeddable': embeddable,
-        'publicDomain': publicDomain,
-        'textToSpeechPermission': textToSpeechPermission,
-        'epub': epub?.toJson(),
-        'pdf': pdf?.toJson(),
-        'webReaderLink': webReaderLink,
-        'accessViewStatus': accessViewStatus,
-        'quoteSharingAllowed': quoteSharingAllowed,
-      };
+  Map<String, dynamic> toJson() =>
+			{
+				'country': country,
+				'viewability': viewability,
+				'embeddable': embeddable,
+				'publicDomain': publicDomain,
+				'textToSpeechPermission': textToSpeechPermission,
+				'epub': epub?.toJson(),
+				'pdf': pdf?.toJson(),
+				'webReaderLink': webReaderLink,
+				'accessViewStatus': accessViewStatus,
+				'quoteSharingAllowed': quoteSharingAllowed,
+			};
 
   @override
   List<Object?> get props {
