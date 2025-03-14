@@ -2,8 +2,8 @@ import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerTitle extends StatelessWidget {
-  const BestSellerTitle({super.key});
+class NewestBooksTitle extends StatelessWidget {
+  const NewestBooksTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class BestSellerTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Best Seller',
+              'Newest Books',
               style: Styles.textStyle18,
             ),
             SizedBox(
