@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_app/features/home/presentation/view_models/similar_books/similar_books_cubit.dart';
@@ -23,10 +24,11 @@ class SimilarBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return const CustomBookImage(
+                return CustomBookImage(
                   borderRadius: 8,
                   imageUrl:
-                      'https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg',
+                      state.books[index].volumeInfo!.imageLinks?.thumbnail ??
+                          noImageUrl,
                 );
               },
             ),
