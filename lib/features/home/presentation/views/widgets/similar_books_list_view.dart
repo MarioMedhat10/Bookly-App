@@ -22,7 +22,7 @@ class SimilarBooksListView extends StatelessWidget {
                 width: 10,
               ),
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return CustomBookImage(
                   borderRadius: 8,
