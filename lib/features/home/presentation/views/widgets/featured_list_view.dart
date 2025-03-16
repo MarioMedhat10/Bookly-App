@@ -37,18 +37,16 @@ class FeaturedListView extends StatelessWidget {
                           ? kHorizontalPadding
                           : 0,
                     ),
-                    child: GestureDetector(
+                    child: CustomBookImage(
+                      imageUrl: state
+                              .books[index].volumeInfo!.imageLinks!.thumbnail ??
+                          noImageUrl,
                       onTap: () async {
                         await GoRouter.of(context).push(
                           AppRouter.kBookDetailsView,
                           extra: state.books[index],
                         );
                       },
-                      child: CustomBookImage(
-                        imageUrl: state.books[index].volumeInfo!.imageLinks!
-                                .thumbnail ??
-                            noImageUrl,
-                      ),
                     ),
                   );
                 },
