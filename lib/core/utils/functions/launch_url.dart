@@ -5,7 +5,11 @@ Future<void> launchCustomUrl(context, String? url) async {
   if (url != null) {
     Uri uri = Uri.parse(url);
 
-    if (!await launchUrl(uri)) {
+    try {
+      if (!await launchUrl(uri)) {
+        showSnackBar(context, "Can't open the preview");
+      }
+    } catch (e) {
       showSnackBar(context, "Can't open the preview");
     }
   }
