@@ -67,7 +67,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       Map<String, dynamic> data = await apiService.get(
         endpoint:
-            'volumes?Filtering=free-ebooks&Sorting=relevence&q=subject:programming',
+            'volumes?Filtering=free-ebooks&Sorting=relevence&q=subject:$category',
       );
 
       List<BookModel> books = [];
