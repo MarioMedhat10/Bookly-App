@@ -1,4 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  This part for url_launcher   -->
+    <queries>
+        <!-- Open <URL> in the default browser -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
     <application
         android:label="bookly_app"
         android:name="${applicationName}"
