@@ -8,24 +8,29 @@ class CustomBookImage extends StatelessWidget {
     super.key,
     this.borderRadius = 16,
     required this.imageUrl,
+    this.onTap,
   });
 
   final double borderRadius;
   final String imageUrl;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(
-        borderRadius,
-      ),
-      child: AspectRatio(
-        aspectRatio: 10 / 15,
-        child: CachedNetworkImage(
-          imageUrl: imageUrl,
-          fit: BoxFit.fill,
-          errorWidget: (context, url, error) => Image.network(noImageUrl),
-          placeholder: (context, url) => const CustomLoadingIndicator(),
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(
+          borderRadius,
+        ),
+        child: AspectRatio(
+          aspectRatio: 10 / 15,
+          child: CachedNetworkImage(
+            imageUrl: imageUrl,
+            fit: BoxFit.fill,
+            errorWidget: (context, url, error) => Image.network(noImageUrl),
+            placeholder: (context, url) => const CustomLoadingIndicator(),
+          ),
         ),
       ),
     );
