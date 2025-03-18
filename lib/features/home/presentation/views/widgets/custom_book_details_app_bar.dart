@@ -19,14 +19,14 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             size: 28,
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          splashRadius: 24,
-          icon: const Icon(
-            Icons.shopping_cart_outlined,
-            size: 25,
-          ),
-        ),
+        // IconButton(
+        //   onPressed: () {},
+        //   splashRadius: 24,
+        //   icon: const Icon(
+        //     Icons.shopping_cart_outlined,
+        //     size: 25,
+        //   ),
+        // ),
       ],
     );
   }
