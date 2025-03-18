@@ -71,7 +71,7 @@ class NewestBooksListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo!.authors![0],
+                    bookModel.volumeInfo!.authors?[0] ?? '',
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
