@@ -20,8 +20,11 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   initState() {
     super.initState();
 
+    final categories = widget.bookModel.volumeInfo?.categories;
+    final category = categories != null ? categories[0] : 'programming';
+
     unawaited(BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
-      category: widget.bookModel.volumeInfo!.categories![0],
+      category: category,
     ));
   }
 

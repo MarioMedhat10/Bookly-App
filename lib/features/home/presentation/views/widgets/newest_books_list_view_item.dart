@@ -46,7 +46,7 @@ class NewestBooksListViewItem extends StatelessWidget {
             CustomBookImage(
               borderRadius: 8,
               imageUrl:
-                  bookModel.volumeInfo!.imageLinks!.thumbnail ?? noImageUrl,
+                  bookModel.volumeInfo!.imageLinks?.thumbnail ?? noImageUrl,
             ),
             const SizedBox(
               width: 30,
@@ -71,8 +71,10 @@ class NewestBooksListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo!.authors![0],
+                    bookModel.volumeInfo!.authors?[0] ?? '',
                     style: Styles.textStyle14,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(
                     height: 10,
